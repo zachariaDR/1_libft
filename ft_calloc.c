@@ -6,7 +6,7 @@
 /*   By: zadriouc <zadriouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:29:45 by zadriouc          #+#    #+#             */
-/*   Updated: 2023/12/09 21:43:17 by zadriouc         ###   ########.fr       */
+/*   Updated: 2023/12/10 13:58:43 by zadriouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (size && count > SIZE_MAX / size)
 		return (0);
+	if (!size || !count)
+		ft_calloc(1, 1);
 	totale = size * count;
 	res = malloc(totale);
 	if (!res)
